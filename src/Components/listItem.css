@@ -1,0 +1,12 @@
+.individualList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 15px ;
+    background-color: rgb(184, 235, 218);
+    margin-top: 15px;
+    width: 70%;
+    border: 2px solid rgb(189, 90, 174);
+    border-radius: 4px;
+}
+
