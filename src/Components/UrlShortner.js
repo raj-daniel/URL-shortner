@@ -27,7 +27,7 @@ const UrlShortner = () => {
         return resJson;
     };
     const eventTrack = (category, action, label) => {
-        ReactGA.event({
+        ReactGa.event({
             category: category,
             action: action,
             label: label,
