@@ -2,11 +2,13 @@ import "./App.css";
 import Header from "./Components/Header";
 import UrlShortner from "./Components/UrlShortner";
 import ReactGA from "react-ga";
+import { useEffect } from "react";
 
-const TRACKING_ID = "G-LQ0083ERCY";
-ReactGA.initialize(TRACKING_ID);
-ReactGA.pageview(window.location.pathname + window.location.search);
 function App() {
+    useEffect(() => {
+        ReactGA.initialize('G-LQ0083ERCY');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    });
     return (
         <div>
             <Header />
