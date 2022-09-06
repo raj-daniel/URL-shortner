@@ -20,19 +20,19 @@ const UrlShortner = () => {
                 },
             ];
         });
-        ReactGa.event({
-            category: "button click",
-            action: "test",
-            label: "click",
-            value: 1,
-        });
     };
     const shortURL = async (input) => {
         let res = await fetch(input);
         let resJson = res.json();
         return resJson;
     };
-
+    const eventTrack = (category, action, label) => {
+        ReactGA.event({
+            category: category,
+            action: action,
+            label: label,
+        });
+    };
     useEffect(() => {
         ReactGa.pageview(window.location.pathname);
     }, []);
@@ -52,6 +52,12 @@ const UrlShortner = () => {
                     <button
                         style={{ backgroundColor: "#35c2e9", width: "100%" }}
                         type="submit"
+                        onClick={eventTrack.bind(
+                            this,
+                            "Sign Up Screen",
+                            "Sign Up Button",
+                            "Button"
+                        )}
                     >
                         Shorten
                     </button>
