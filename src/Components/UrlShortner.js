@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Lists from "./Lists";
 import "./urlShortner.css";
-import ReactGa from "react-ga";
+import ReactGA from "react-ga";
 const URL = "https://api.shrtco.de/v2/shorten?url=";
 
 const UrlShortner = () => {
@@ -27,14 +27,14 @@ const UrlShortner = () => {
         return resJson;
     };
     const eventTrack = (category, action, label) => {
-        ReactGa.event({
+        ReactGA.event({
             category: category,
             action: action,
             label: label,
         });
     };
     useEffect(() => {
-        ReactGa.pageview(window.location.pathname);
+        ReactGA.pageview(window.location.pathname);
     }, []);
 
     return (
