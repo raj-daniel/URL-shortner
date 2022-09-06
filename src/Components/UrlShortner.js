@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Lists from "./Lists";
 import "./urlShortner.css";
 import ReactGa from "react-ga";
@@ -32,6 +32,10 @@ const UrlShortner = () => {
         let resJson = res.json();
         return resJson;
     };
+
+    useEffect(() => {
+        ReactGa.pageview(window.location.pathname);
+    }, []);
 
     return (
         <>
